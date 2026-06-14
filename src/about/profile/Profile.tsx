@@ -15,11 +15,11 @@ function Profile() {
       <h2 className={FONT_STYLES.title}>Profile</h2>
 
       <div className="mt-10.5 flex flex-col gap-8 3xl:flex-row 3xl:gap-10.5">
-        <div className="relative hidden overflow-hidden rounded-l-[45px] 3xl:block 3xl:h-150 3xl:w-125 3xl:shrink-0">
+        <div className="relative hidden overflow-hidden rounded-l-[45px] 3xl:block 3xl:h-150 3xl:w-110 3xl:shrink-0">
           <img
             src={profileImg}
             alt="프로필 사진"
-            className="size-full object-cover"
+            className="size-full object-cover object-[60%_50%]"
           />
           <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,transparent_0%,transparent_60%,rgba(247,247,247,0.4)_70%,rgba(247,247,247,0.9)_85%,#F7F7F7_100%)]" />
         </div>

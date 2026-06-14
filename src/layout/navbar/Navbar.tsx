@@ -46,7 +46,7 @@ function Navbar() {
         className="flex h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm"
         aria-label="Primary navigation"
       >
-        <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-8">
+        <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-10">
           <span className={`${FONT_STYLES.title} text-[#444]`}>Portfolio</span>
 
           <ul className="hidden h-full md:flex">

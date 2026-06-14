@@ -3,7 +3,6 @@ import MobileNav from "./MobileNav";
 import MobileNavMenu from "./MobileNavMenu";
 import NavSprite from "./NavSprite";
 import { useDisclosure } from "../../hooks/useDisclosure";
-import { FONT_STYLES } from "../../styles/theme";
 
 const NAV_ITEMS = [
   { to: "/about", label: "About" },
@@ -46,8 +45,10 @@ function Navbar() {
         className="flex h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm"
         aria-label="Primary navigation"
       >
-        <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-10">
-          <span className={`${FONT_STYLES.title} text-[#444]`}>Portfolio</span>
+        <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-8 md:px-12">
+          <span className="text-[32px] font-[550] text-[#444444]">
+            Portfolio
+          </span>
 
           <ul className="hidden h-full md:flex">
             {NAV_ITEMS.map((item) => (

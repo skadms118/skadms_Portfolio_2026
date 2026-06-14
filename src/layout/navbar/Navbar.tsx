@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import MobileNavMenu from "./MobileNavMenu";
+import NavSprite from "./NavSprite";
 import { useDisclosure } from "../../hooks/useDisclosure";
 import { FONT_STYLES } from "../../styles/theme";
 
@@ -36,35 +37,26 @@ function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-30">
       <nav
-        className="hidden h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] md:flex backdrop-blur-sm"
+        className="hidden h-25 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] md:flex backdrop-blur-sm"
         aria-label="Primary navigation"
       >
         <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-6">
-          <span className={`${FONT_STYLES.title} text-[32px] text-[#444]`}>
-            Portfolio
-          </span>
+          <span className={`${FONT_STYLES.title} text-[#444]`}>Portfolio</span>
           <ul className="flex h-full">
             {NAV_ITEMS.map((item) => (
               <li key={item.to} className="group relative isolate h-full w-50">
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
-                    `flex h-full w-full items-center justify-center text-[20px] font-medium ${
+                    `flex h-full w-full items-center justify-center text-[24px] font-medium ${
                       isActive ? "text-[#444]" : "text-[rgba(170,170,170,0.8)]"
                     }`
                   }
                 >
                   {({ isActive }) => (
                     <>
-                      {item.label}
-                      <span
-                        aria-hidden="true"
-                        className={`pointer-events-none absolute -bottom-5 left-0 -z-10 h-15 w-full bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(221,221,221,0.9)_0%,rgba(221,221,221,0)_100%)] transition-opacity duration-150 ${
-                          isActive
-                            ? "opacity-100"
-                            : "opacity-0 group-hover:opacity-100"
-                        }`}
-                      />
+                      <span className="translate-y-2.5">{item.label}</span>
+                      <NavSprite isActive={isActive} />
                     </>
                   )}
                 </NavLink>
@@ -80,7 +72,7 @@ function Navbar() {
         onMouseLeave={onMouseLeave}
         className="md:hidden"
       >
-        <div className="relative flex h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm">
+        <div className="relative flex h-25 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm">
           <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-6">
             <span className="text-[32px] font-bold text-[#444]">Portfolio</span>
             <MobileNav isOpen={isOpen} onToggle={onToggle} />

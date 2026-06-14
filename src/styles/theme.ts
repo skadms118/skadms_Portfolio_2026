@@ -16,7 +16,7 @@ export const FONT_STYLES = {
   /** Bold, 32px, #444444 */
   label: "text-[24px] font-[500] text-[#444444]",
   /** Bold, 32px, #1C1C1C */
-  highlight: "text-[26px] font-[600] text-[#1C1C1C]",
+  highlight: "text-[26px] font-[650] text-[#1C1C1C]",
   /** Regular, 20px, #444444 */
   content1: "text-[18px] font-[450] text-[#444444]",
   /** SemiBold, 20px, #7A7A7A */

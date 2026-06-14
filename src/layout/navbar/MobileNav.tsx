@@ -1,4 +1,4 @@
-const HAMBURGER_BAR_HEIGHTS = ["h-2", "h-2", "h-2"];
+const HAMBURGER_BAR_HEIGHTS = ["h-1.5", "h-1.5", "h-1.5"];
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -16,16 +16,14 @@ function MobileNav({ isOpen, onToggle }: MobileNavProps) {
       onClick={onToggle}
       aria-expanded={isOpen}
       aria-label="메뉴 열기"
-      className="flex flex-col gap-3.5"
+      className="flex flex-col gap-2.5"
     >
       {HAMBURGER_BAR_HEIGHTS.map((height, index) => (
         <span
           key={index}
           aria-hidden="true"
-          className={`w-14 ${height} rounded-[30px] ${
-            isOpen
-              ? "bg-[rgba(160,160,160,0.8)]"
-              : "bg-[rgba(221,221,221,0.8)]"
+          className={`w-10 ${height} rounded-[30px] ${
+            isOpen ? "bg-[rgba(160,160,160,0.8)]" : "bg-[rgba(221,221,221,0.8)]"
           }`}
         />
       ))}

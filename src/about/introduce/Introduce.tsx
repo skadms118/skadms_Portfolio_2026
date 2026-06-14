@@ -54,7 +54,7 @@ function Introduce() {
             있는 팀원이 되고 싶습니다.
           </p>
 
-          <p className="text-center text-[24px] leading-loose font-bold text-[#444444] md:text-left">
+          <p className="text-center text-[20px] leading-loose font-bold text-[#444444] md:text-left">
             #섬세함 #실용주의 #소통 #도전정신
           </p>
         </div>

@@ -14,3 +14,10 @@
   /* Figma의 Apple SD Gothic Neo 대체 폰트로 Pretendard Variable을 전역 기본 폰트로 사용 */
   --font-sans: "Pretendard Variable", "Pretendard", ui-sans-serif, system-ui, sans-serif;
 }
+
+@layer base {
+  /* Sidebar 앵커 이동 시 부드럽게 슬라이드되도록 한다 */
+  html {
+    scroll-behavior: smooth;
+  }
+}

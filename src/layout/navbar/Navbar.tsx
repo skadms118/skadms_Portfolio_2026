@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import MobileNav from "./MobileNav";
+import HamburgerButton from "./HamburgerButton";
 import MobileNavMenu from "./MobileNavMenu";
 import NavSprite from "./NavSprite";
 import { useDisclosure } from "../../hooks/useDisclosure";
@@ -18,7 +18,7 @@ const NAV_ITEMS = [
  * - 1024px(md) 이상: 메뉴 4개(<ul>)를 가로로 표시.
  *   현재 페이지는 텍스트 색상 변경 + sprite 인디케이터를 항상 표시하고,
  *   다른 페이지는 hover 시에만 sprite 인디케이터를 표시한다.
- * - 1024px(md) 미만: MobileNav(햄버거 버튼)이 대신 표시되고, 클릭 시 MobileNavMenu(드롭다운)가 열린다.
+ * - 1024px(md) 미만: HamburgerButton이 대신 표시되고, 클릭 시 MobileNavMenu(드롭다운)가 열린다.
  *   MobileNavMenu는 backdrop-blur가 걸린 <nav> 상단바의 형제로 렌더링되어야
  *   페이지 콘텐츠에 블러가 정상적으로 적용된다(상단바가 자신의 backdrop-filter로
  *   별도 stacking context를 만들어 자손의 backdrop-blur를 가리기 때문).
@@ -28,8 +28,8 @@ function Navbar() {
   const {
     isOpen,
     containerRef,
-    onMouseEnter,
-    onMouseLeave,
+    onPointerEnter,
+    onPointerLeave,
     onToggle,
     onClose,
   } = useDisclosure();
@@ -37,8 +37,8 @@ function Navbar() {
   return (
     <header
       ref={containerRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
       className="fixed inset-x-0 top-0 z-30"
     >
       <nav
@@ -72,7 +72,7 @@ function Navbar() {
             ))}
           </ul>
 
-          <MobileNav isOpen={isOpen} onToggle={onToggle} />
+          <HamburgerButton isOpen={isOpen} onToggle={onToggle} />
         </div>
       </nav>
 

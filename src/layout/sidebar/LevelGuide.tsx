@@ -8,14 +8,14 @@ import LevelInfo, { LEVELS } from "../../skill/LevelInfo";
  * 영역으로 마우스가 옮겨가면 hover가 해제되어 함께 사라진다.
  */
 function LevelGuide() {
-  const { isOpen, containerRef, onMouseEnter, onMouseLeave, onToggle } =
+  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
     useDisclosure<HTMLDivElement>();
 
   return (
     <div
       ref={containerRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
       className="fixed top-[calc(50%-140px)] right-2.5 z-20 hidden -translate-y-1/2 xs:flex"
     >
       {isOpen && (

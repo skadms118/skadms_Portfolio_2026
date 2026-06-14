@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import type { RefObject } from "react";
+import type { PointerEvent as ReactPointerEvent, RefObject } from "react";
 
 interface UseDisclosureReturn<T extends HTMLElement> {
   isOpen: boolean;
   isPinned: boolean;
   containerRef: RefObject<T | null>;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onPointerEnter: (event: ReactPointerEvent) => void;
+  onPointerLeave: (event: ReactPointerEvent) => void;
   onToggle: () => void;
   onClose: () => void;
 }
@@ -14,7 +14,11 @@ interface UseDisclosureReturn<T extends HTMLElement> {
 /**
  * hover 시 표시, 클릭 시 고정(pin), 배경 클릭 또는 재클릭 시 해제되는
  * 공용 disclosure 상태를 관리한다.
- * Sidebar / LevelGuide / MobileNav에서 공통으로 사용한다.
+ * Sidebar / LevelGuide / Navbar / SkillCard에서 공통으로 사용한다.
+ *
+ * hover 진입/이탈은 마우스(pointerType === "mouse")에서만 isHovered를 변경한다.
+ * 터치는 click을 통해 isPinned로만 토글되므로, 탭 이후 발생하는 호환성
+ * mouseenter/mouseleave 이벤트로 isHovered가 의도치 않게 고정되는 것을 막는다.
  *
  * @template T containerRef를 연결할 루트 엘리먼트의 타입 (예: HTMLDivElement)
  */
@@ -55,8 +59,14 @@ export function useDisclosure<T extends HTMLElement = HTMLElement>(): UseDisclos
     isOpen: isHovered || isPinned,
     isPinned,
     containerRef,
-    onMouseEnter: () => setIsHovered(true),
-    onMouseLeave: () => setIsHovered(false),
+    onPointerEnter: (event) => {
+      if (event.pointerType !== "mouse") return;
+      setIsHovered(true);
+    },
+    onPointerLeave: (event) => {
+      if (event.pointerType !== "mouse") return;
+      setIsHovered(false);
+    },
     onToggle,
     onClose,
   };

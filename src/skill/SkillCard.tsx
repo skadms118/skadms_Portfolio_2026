@@ -21,7 +21,7 @@ export interface SkillItem {
  * 카드 hover가 해제되어 함께 사라진다.
  */
 function SkillCard({ name, icon, level }: SkillItem) {
-  const { isOpen, containerRef, onMouseEnter, onMouseLeave, onToggle } =
+  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
     useDisclosure<HTMLDivElement>();
   const levelBarRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
@@ -44,8 +44,8 @@ function SkillCard({ name, icon, level }: SkillItem) {
   return (
     <div
       ref={containerRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
       className="relative flex size-62 flex-col items-center justify-center gap-3 rounded-[45px] bg-[#f7f7f7] shadow-[4px_4px_4px_0px_rgba(160,160,160,0.25)] transition-transform duration-200 hover:scale-105"
     >
       <h3 className={FONT_STYLES.label}>{name}</h3>
@@ -70,7 +70,7 @@ function SkillCard({ name, icon, level }: SkillItem) {
             ref={popupRef}
             role="dialog"
             aria-label={`${name} 레벨 설명`}
-            className={`pointer-events-none absolute z-20 top-full left-1/2 mt-2.5 -translate-x-1/2 rounded-[30px] bg-[rgba(240,240,240,0.9)] p-6 shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] xs:top-auto xs:left-auto xs:mt-0 xs:translate-x-0 xs:bottom-full xs:-mb-5 ${
+            className={`pointer-events-none absolute z-20 top-full left-1/2 mt-2.5 w-75 -translate-x-1/2 rounded-[30px] bg-[rgba(240,240,240,0.9)] p-6 shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] xs:top-auto xs:left-auto xs:mt-0 xs:w-auto xs:translate-x-0 xs:bottom-full xs:-mb-5 ${
               openLeft ? "xs:right-full" : "xs:left-full"
             }`}
           >

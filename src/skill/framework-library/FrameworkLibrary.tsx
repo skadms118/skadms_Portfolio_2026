@@ -21,7 +21,7 @@ function FrameworkLibrary() {
         <Reveal
           key={item.name}
           delay={REVEAL_STEP * (index + 1)}
-          className="hover:z-20"
+          className="has-[[role=dialog]]:z-20"
         >
           <SkillCard {...item} />
         </Reveal>

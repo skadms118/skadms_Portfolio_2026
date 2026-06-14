@@ -1,6 +1,6 @@
 const HAMBURGER_BAR_HEIGHTS = ["h-1.5", "h-1.5", "h-1.5"];
 
-interface MobileNavProps {
+interface HamburgerButtonProps {
   isOpen: boolean;
   onToggle: () => void;
 }
@@ -9,7 +9,7 @@ interface MobileNavProps {
  * 1024px(md) 미만에서 표시되는 햄버거 메뉴 버튼.
  * 열림 상태에 따라 막대 색상이 바뀐다. 드롭다운 메뉴 자체는 MobileNavMenu가 렌더링한다.
  */
-function MobileNav({ isOpen, onToggle }: MobileNavProps) {
+function HamburgerButton({ isOpen, onToggle }: HamburgerButtonProps) {
   return (
     <button
       type="button"
@@ -31,4 +31,4 @@ function MobileNav({ isOpen, onToggle }: MobileNavProps) {
   );
 }
 
-export default MobileNav;
+export default HamburgerButton;

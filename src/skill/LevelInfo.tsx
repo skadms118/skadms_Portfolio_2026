@@ -34,13 +34,20 @@ interface LevelInfoProps {
 function LevelInfo({ level, layout = "row" }: LevelInfoProps) {
   const { label, description } = LEVELS[level - 1];
 
+  // column(SkillCard 팝업)은 모바일에서 너비를 줄이기 위해 줄바꿈을 허용하고,
+  // xs 이상에서만 한 줄로 표시한다. row(LevelGuide)는 항상 한 줄로 표시한다.
+  const nowrapClassName =
+    layout === "column" ? "xs:whitespace-nowrap" : "whitespace-nowrap";
+
   const labelEl = (
-    <p className="text-[20px] font-bold text-[#444] whitespace-nowrap">
+    <p className={`text-[20px] font-bold text-[#444] ${nowrapClassName}`}>
       {label}
     </p>
   );
   const descriptionEl = (
-    <p className="text-[20px] text-[#444] whitespace-nowrap">{description}</p>
+    <p className={`text-[20px] text-[#444] ${nowrapClassName}`}>
+      {description}
+    </p>
   );
   const levelBarEl = <LevelBar level={level} />;
 

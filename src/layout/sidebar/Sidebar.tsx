@@ -16,14 +16,14 @@ const TRIGGER_BAR_COUNT = 10;
  * 1024px(md) 미만에서는 표시되지 않는다.
  */
 function Sidebar({ sections }: SidebarProps) {
-  const { isOpen, containerRef, onMouseEnter, onMouseLeave, onToggle } =
+  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
     useDisclosure<HTMLDivElement>();
 
   return (
     <div
       ref={containerRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onPointerEnter={onPointerEnter}
+      onPointerLeave={onPointerLeave}
       className="fixed top-1/2 right-7.5 z-20 hidden -translate-y-1/2 items-center gap-5.25 md:flex"
     >
       {isOpen && (

@@ -10,7 +10,7 @@ function NavSprite({ isActive }: NavSpriteProps) {
   return (
     <span
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-6 bg-linear-to-t from-[rgba(221,221,221,0.8)] via-[rgba(221,221,221,0.2)] to-transparent blur-xs transition-opacity duration-500 ${
+      className={`pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-4 bg-linear-to-t from-[rgba(221,221,221,1.0)] via-[rgba(221,221,221,0.3)] to-transparent blur-xs transition-opacity duration-500 ${
         isActive ? "opacity-90" : "opacity-0 group-hover:opacity-90"
       }`}
     />

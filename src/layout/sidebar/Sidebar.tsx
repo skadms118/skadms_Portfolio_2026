@@ -29,7 +29,7 @@ function Sidebar({ sections }: SidebarProps) {
       {isOpen && (
         <nav
           aria-label="Section navigation"
-          className="flex h-100 w-50 flex-col items-start justify-center gap-2.5 rounded-[45px] bg-[rgba(221,221,221,0.25)] pl-6 shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] backdrop-blur-sm"
+          className="flex h-100 w-50 flex-col items-start justify-center gap-8 rounded-[45px] bg-[rgba(221,221,221,0.25)] pl-6 shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] backdrop-blur-sm"
         >
           {sections.map((section) => (
             <a
@@ -48,7 +48,7 @@ function Sidebar({ sections }: SidebarProps) {
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-label="사이드바 메뉴"
-        className="flex w-7.5 flex-col gap-5"
+        className="flex w-7.5 flex-col gap-4"
       >
         {Array.from({ length: TRIGGER_BAR_COUNT }).map((_, index) => (
           <span

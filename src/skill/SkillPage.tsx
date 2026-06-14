@@ -11,12 +11,9 @@ function SkillPage() {
   return (
     <div>
       <LevelGuide />
-
-      <div>
-        <Language />
-        <FrameworkLibrary />
-        <Tool />
-      </div>
+      <Language />
+      <FrameworkLibrary />
+      <Tool />
     </div>
   );
 }

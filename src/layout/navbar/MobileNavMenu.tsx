@@ -32,7 +32,7 @@ function MobileNavMenu({ items, onClose }: MobileNavMenuProps) {
               to={item.to}
               className={({ isActive }) =>
                 `flex h-full items-center justify-end pr-15 text-[24px] font-semibold ${
-                  isActive ? "text-[#444]" : "text-[#A0A0A0]"
+                  isActive ? "text-[#555555]" : "text-[#555555]"
                 }`
               }
             >

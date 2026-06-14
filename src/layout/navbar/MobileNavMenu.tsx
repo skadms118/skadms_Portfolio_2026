@@ -27,12 +27,12 @@ function MobileNavMenu({ items, onClose }: MobileNavMenuProps) {
     >
       <ul className="flex flex-col py-7.5">
         {items.map((item) => (
-          <li key={item.to} className="h-30">
+          <li key={item.to} className="h-20">
             <NavLink
               to={item.to}
               className={({ isActive }) =>
-                `flex h-full items-center justify-end pr-19 text-[24px] font-semibold ${
-                  isActive ? "text-[#444]" : "text-[#cdcdcd]"
+                `flex h-full items-center justify-end pr-15 text-[24px] font-semibold ${
+                  isActive ? "text-[#444]" : "text-[#A0A0A0]"
                 }`
               }
             >

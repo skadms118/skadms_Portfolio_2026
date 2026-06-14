@@ -10,7 +10,7 @@ import profileImg from "../../assets/profile_jpg.jpg";
  */
 function Profile() {
   return (
-    <section id="profile" className="px-25 pt-20 md:px-45 md:pt-50">
+    <section id="profile" className="px-15 pt-20 md:px-45 md:pt-50">
       <h2 className={FONT_STYLES.title}>Profile</h2>
 
       <div className="mt-10.5 flex flex-col gap-8 3xl:flex-row 3xl:gap-10.5">

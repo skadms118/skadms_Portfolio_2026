@@ -58,7 +58,7 @@ function Strength() {
   return (
     <section
       id="strength"
-      className="overflow-x-hidden px-25 pt-20 pb-20 md:px-45 md:pt-50 md:pb-50"
+      className="overflow-x-hidden px-15 pt-20 pb-20 md:px-45 md:pt-50 md:pb-50"
     >
       <h2 className={FONT_STYLES.title}>Strength</h2>
 

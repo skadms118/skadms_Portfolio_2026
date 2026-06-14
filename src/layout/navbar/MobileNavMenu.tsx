@@ -31,8 +31,8 @@ function MobileNavMenu({ items, onClose }: MobileNavMenuProps) {
             <NavLink
               to={item.to}
               className={({ isActive }) =>
-                `flex h-full items-center justify-end pr-15 text-[24px] font-semibold ${
-                  isActive ? "text-[#555555]" : "text-[#555555]"
+                `flex h-full items-center justify-end pr-15 text-[24px] font-medium ${
+                  isActive ? "text-[#646464]" : "text-[#646464]"
                 }`
               }
             >

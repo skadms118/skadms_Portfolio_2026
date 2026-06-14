@@ -1,6 +1,7 @@
 import { FONT_STYLES } from "../../styles/theme";
 import SectionDivider from "../../components/SectionDivider";
 import profileImg from "../../assets/profile_jpg.jpg";
+import { CONTACT_LINKS } from "../../data/contect";
 
 /**
  * /about - Profile 섹션.
@@ -28,9 +29,7 @@ function Profile() {
             <h3 className={FONT_STYLES.label}>Name</h3>
             <div className="flex items-end gap-2.5">
               <p className={FONT_STYLES.content2}>박남은</p>
-              <p className="text-[14px] font-semibold text-[#a0a0a0]">
-                2000.1.18
-              </p>
+              <p className={FONT_STYLES.contentDetail}>2000.1.18</p>
             </div>
           </div>
 
@@ -56,9 +55,11 @@ function Profile() {
             <h3 className={FONT_STYLES.label}>Contect</h3>
             <div className={FONT_STYLES.content2}>
               <p>Phone: 010-9494-2537</p>
-              <p>Email: skadms118@gmail.com</p>
-              <p>Instagram: ivam_00</p>
-              <p>Github: skadms118</p>
+              {CONTACT_LINKS.map(({ label, value, href }) => (
+                <p key={label}>
+                  {label}: <a href={href}>{value}</a>
+                </p>
+              ))}
             </div>
           </div>
         </div>

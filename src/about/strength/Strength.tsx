@@ -68,10 +68,8 @@ function Strength() {
             key={item.title}
             className="flex h-60 w-75 flex-col items-center justify-center gap-2.5 rounded-[45px] border-10 border-[#c2c2c2] px-5 text-center shadow-[0px_4px_4px_0px_rgba(221,221,221,0.25)] xs:h-75"
           >
-            <h3 className="text-[26px] font-bold text-[#444444]">
-              {item.title}
-            </h3>
-            <div className="text-[18px] font-semibold text-[#888888]">
+            <h3 className={FONT_STYLES.highlight}>{item.title}</h3>
+            <div className={FONT_STYLES.content2}>
               {item.description.map((line) => (
                 <p key={line}>{line}</p>
               ))}

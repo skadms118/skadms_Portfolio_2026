@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import MobileNavMenu from "./MobileNavMenu";
 import { useDisclosure } from "../../hooks/useDisclosure";
+import { FONT_STYLES } from "../../styles/theme";
 
 const NAV_ITEMS = [
   { to: "/about", label: "About" },
@@ -39,14 +40,16 @@ function Navbar() {
         aria-label="Primary navigation"
       >
         <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-6">
-          <span className="text-[32px] font-bold text-[#444]">Portfolio</span>
+          <span className={`${FONT_STYLES.title} text-[32px] text-[#444]`}>
+            Portfolio
+          </span>
           <ul className="flex h-full">
             {NAV_ITEMS.map((item) => (
               <li key={item.to} className="group relative isolate h-full w-50">
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
-                    `flex h-full w-full items-center justify-center text-[20px] font-semibold ${
+                    `flex h-full w-full items-center justify-center text-[20px] font-medium ${
                       isActive ? "text-[#444]" : "text-[rgba(170,170,170,0.8)]"
                     }`
                   }

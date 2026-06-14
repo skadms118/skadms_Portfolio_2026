@@ -13,6 +13,7 @@ const TRIGGER_BAR_COUNT = 10;
 
 /**
  * hover 시 Rectangle 59 패널이 펼쳐지고, 클릭 시 고정, 배경 클릭 또는 재클릭 시 해제되는 사이드바.
+ * 1024px(md) 미만에서는 표시되지 않는다.
  */
 function Sidebar({ sections }: SidebarProps) {
   const { isOpen, containerRef, onMouseEnter, onMouseLeave, onToggle } =
@@ -23,7 +24,7 @@ function Sidebar({ sections }: SidebarProps) {
       ref={containerRef}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="fixed top-1/2 right-7.5 z-20 flex -translate-y-1/2 items-center gap-5.25"
+      className="fixed top-1/2 right-7.5 z-20 hidden -translate-y-1/2 items-center gap-5.25 md:flex"
     >
       {isOpen && (
         <nav

@@ -35,18 +35,18 @@ function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-30">
       <nav
-        className="hidden h-25 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] md:flex backdrop-blur-sm"
+        className="hidden h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] md:flex backdrop-blur-sm"
         aria-label="Primary navigation"
       >
         <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-6">
-          <span className="text-[40px] font-bold text-[#444]">Portfolio</span>
+          <span className="text-[32px] font-bold text-[#444]">Portfolio</span>
           <ul className="flex h-full">
             {NAV_ITEMS.map((item) => (
               <li key={item.to} className="group relative isolate h-full w-50">
                 <NavLink
                   to={item.to}
                   className={({ isActive }) =>
-                    `flex h-full w-full items-center justify-center text-[24px] font-semibold ${
+                    `flex h-full w-full items-center justify-center text-[20px] font-semibold ${
                       isActive ? "text-[#444]" : "text-[rgba(170,170,170,0.8)]"
                     }`
                   }
@@ -77,9 +77,9 @@ function Navbar() {
         onMouseLeave={onMouseLeave}
         className="md:hidden"
       >
-        <div className="relative flex h-25 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm">
+        <div className="relative flex h-20 bg-[rgba(247,247,247,0.8)] shadow-[0px_5px_20px_0px_rgba(172,172,172,0.25)] backdrop-blur-sm">
           <div className="mx-auto flex h-full w-full max-w-360 items-center justify-between px-6">
-            <span className="text-[40px] font-bold text-[#444]">Portfolio</span>
+            <span className="text-[32px] font-bold text-[#444]">Portfolio</span>
             <MobileNav isOpen={isOpen} onToggle={onToggle} />
           </div>
         </div>

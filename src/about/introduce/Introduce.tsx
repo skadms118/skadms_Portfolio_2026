@@ -16,7 +16,7 @@ function Introduce() {
       <h2 className={`${FONT_STYLES.title} text-left`}>Introduce</h2>
 
       <div className="mt-10 flex flex-col items-center gap-8 md:flex-row md:items-stretch md:gap-12.5">
-        <div className="size-86 shrink-0 overflow-hidden rounded-[45px] md:h-114.75">
+        <div className="size-80 shrink-0 overflow-hidden rounded-[45px] md:h-114.75">
           <img
             src={introduceImg}
             alt="증명사진"

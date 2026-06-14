@@ -16,7 +16,7 @@ function MobileNav({ isOpen, onToggle }: MobileNavProps) {
       onClick={onToggle}
       aria-expanded={isOpen}
       aria-label="메뉴 열기"
-      className="flex flex-col gap-2.5"
+      className="flex flex-col gap-2.5 md:hidden"
     >
       {HAMBURGER_BAR_HEIGHTS.map((height, index) => (
         <span

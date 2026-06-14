@@ -11,7 +11,7 @@ function Introduce() {
   return (
     <section
       id="introduce"
-      className="overflow-x-hidden px-15 pt-16 md:px-45 md:pt-39.5"
+      className="overflow-x-hidden px-16 pt-16 md:px-45 md:pt-39.5"
     >
       <h2 className={`${FONT_STYLES.title} text-left`}>Introduce</h2>
 

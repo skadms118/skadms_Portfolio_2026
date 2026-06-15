@@ -18,7 +18,7 @@ const LevelDialogPanel = forwardRef<HTMLDivElement, LevelDialogPanelProps>(
         ref={ref}
         role="dialog"
         aria-label={ariaLabel}
-        className={`pointer-events-none absolute bg-[rgba(240,240,240,0.9)] shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] ${className}`}
+        className={`absolute bg-[rgba(240,240,240,0.9)] shadow-[4px_4px_4px_0px_rgba(221,221,221,0.25)] ${className}`}
       >
         {children}
       </div>

@@ -14,7 +14,8 @@ export interface SkillItem {
  * Language/Framework & Library/Tool 섹션이 공유하는 스킬 카드.
  * 정사각형 카드 안에 이름, 아이콘, LevelBar를 세로로 배치하며, hover 시 카드 전체가
  * (내부 콘텐츠와 함께) 살짝 커진다.
- * LevelBar를 hover/클릭하면 해당 스킬의 레벨에 대한 설명이 다이얼로그로 나타난다.
+ * LevelBar를 hover/클릭하거나(PC), 카드 전체를 탭하면(모바일) 해당 스킬의 레벨에 대한
+ * 설명이 다이얼로그로 나타난다.
  * xs 이상(PC)에서는 LevelBar 우측(화면 우측이 막히면 좌측)에 SkillLevelDialogDesktop이,
  * xs 미만(모바일)에서는 카드 전체를 덮는 SkillLevelDialogMobile이 표시되며,
  * 이때 카드의 이름/아이콘/LevelBar는 블러 처리된다.
@@ -39,6 +40,7 @@ function SkillCard({ name, icon, level }: SkillItem) {
       ref={containerRef}
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
+      onClick={onToggle}
       className="relative flex size-62 flex-col items-center justify-center gap-3 rounded-[45px] bg-[#f7f7f7] shadow-[4px_4px_4px_0px_rgba(160,160,160,0.25)] transition-transform duration-200 hover:scale-105"
     >
       <div

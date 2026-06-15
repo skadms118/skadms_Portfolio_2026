@@ -1,3 +1,5 @@
+import Project from "./Project";
+
 /**
  * /project - 현재 명세에는 하위 섹션이 정의되어 있지 않아 단일 섹션 placeholder로 구성한다.
  * 추후 Figma에서 세부 섹션이 확인되면, About/Experience/Skill과 동일한 패턴으로
@@ -6,10 +8,7 @@
 function ProjectPage() {
   return (
     <div>
-      <section id="project" className="flex min-h-screen items-center justify-center">
-        <h2 className="text-2xl font-bold">Project</h2>
-        {/* TODO: Figma 디자인 적용 */}
-      </section>
+      <Project />
     </div>
   );
 }

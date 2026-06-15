@@ -1,9 +1,14 @@
+import PageSection from "../../components/PageSection";
+import ExperienceGraph from "../ExperienceGraph";
+
+/**
+ * /experience - Experience 섹션. 활동 기록을 그래프 형태로 나열한다.
+ */
 function Experience() {
   return (
-    <section id="experience" className="flex min-h-screen items-center justify-center">
-      <h2 className="text-2xl font-bold">Experience</h2>
-      {/* TODO: Figma 디자인 적용 */}
-    </section>
+    <PageSection id="experience" title="Experience">
+      <ExperienceGraph />
+    </PageSection>
   );
 }
 

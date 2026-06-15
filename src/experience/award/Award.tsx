@@ -1,9 +1,16 @@
+import PageSection from "../../components/PageSection";
+import { FONT_STYLES } from "../../styles/theme";
+
+/**
+ * /experience - Award 섹션. 콘텐츠는 다음 단계에서 구현한다.
+ */
 function Award() {
   return (
-    <section id="award" className="flex min-h-screen items-center justify-center">
-      <h2 className="text-2xl font-bold">Award</h2>
-      {/* TODO: Figma 디자인 적용 */}
-    </section>
+    <PageSection id="award" title="Award">
+      <>
+        <h3 className={FONT_STYLES.label}>앞으로 채워나갈 예정입니다.</h3>
+      </>
+    </PageSection>
   );
 }
 

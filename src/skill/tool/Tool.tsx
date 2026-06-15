@@ -1,15 +1,7 @@
 import PageSection from "../../components/PageSection";
 import Reveal, { REVEAL_STEP } from "../../components/Reveal";
-import SkillCard, { type SkillItem } from "../SkillCard";
-
-const TOOLS: SkillItem[] = [
-  { name: "Figma", icon: "/figma_logo.svg", level: 2 },
-  { name: "Adobe Illustrator", icon: "/adobe_Illustrator_logo.svg", level: 3 },
-  { name: "Adobe Photoshop", icon: "/adobe_photoshop_logo.svg", level: 1 },
-  { name: "VSCode", icon: "/vscode_logo.svg", level: 1 },
-  { name: "Github", icon: "/github_logo.svg", level: 1 },
-  { name: "Notion", icon: "/notion_logo.svg", level: 2 },
-];
+import SkillCard from "../SkillCard";
+import { TOOLS } from "../../items/ToolItem";
 
 /**
  * /skill - Tool 섹션. 사용 도구 스킬 카드를 그리드로 배치한다.

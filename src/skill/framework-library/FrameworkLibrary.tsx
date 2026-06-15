@@ -1,11 +1,7 @@
 import PageSection from "../../components/PageSection";
 import Reveal, { REVEAL_STEP } from "../../components/Reveal";
-import SkillCard, { type SkillItem } from "../SkillCard";
-
-const FRAMEWORKS: SkillItem[] = [
-  { name: "React", icon: "/react_logo.svg", level: 2 },
-  { name: "TailwindCSS", icon: "/tailwindcss_logo.svg", level: 1 },
-];
+import SkillCard from "../SkillCard";
+import { FRAMEWORKS } from "../../items/FrameworkItem";
 
 /**
  * /skill - Framework & Library 섹션. 프레임워크/라이브러리 스킬 카드를 그리드로 배치한다.

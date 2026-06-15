@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { FONT_STYLES } from "../styles/theme";
 import LevelBar from "./LevelBar";
 import SkillLevelDialogDesktop from "./SkillLevelDialogDesktop";
@@ -34,13 +35,20 @@ function SkillCard({ name, icon, level }: SkillItem) {
     onToggle,
     onClose,
   } = useSkillLevelDialog();
+  const lastPointerTypeRef = useRef("mouse");
 
   return (
     <div
       ref={containerRef}
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
-      onClick={onToggle}
+      onPointerDown={(event) => {
+        lastPointerTypeRef.current = event.pointerType;
+      }}
+      onClick={() => {
+        if (lastPointerTypeRef.current === "mouse") return;
+        onToggle();
+      }}
       className="relative flex size-62 flex-col items-center justify-center gap-3 rounded-[45px] bg-[#f7f7f7] shadow-[4px_4px_4px_0px_rgba(160,160,160,0.25)] transition-transform duration-200 hover:scale-105"
     >
       <div

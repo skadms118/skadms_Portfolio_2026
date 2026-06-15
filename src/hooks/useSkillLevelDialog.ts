@@ -1,10 +1,15 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { useDisclosure } from "./useDisclosure";
+import { supportsHoverInput, useDisclosure } from "./useDisclosure";
 
 /**
  * SkillCard의 레벨 설명 다이얼로그 disclosure 상태와, xs 이상(PC)에서 다이얼로그가
  * LevelBar의 우측/좌측 중 어디에 표시될지(openLeft)를 함께 관리한다.
  * Language/FrameworkLibrary/Tool 섹션의 SkillCard가 공통으로 사용한다.
+ *
+ * 터치 전용 기기((hover: none))에서는 카드를 탭해 다이얼로그를 연 뒤 화면의
+ * 다른 영역(다른 카드 등)을 탭해도 닫히지 않도록 closeOnOutsideClick을 끈다.
+ * 닫으려면 다이얼로그 자체를 탭하거나 LevelBar를 다시 탭해야 한다.
+ * 마우스/트랙패드를 사용하는 기기((hover: hover))는 기존과 동일하게 동작한다.
  */
 export function useSkillLevelDialog() {
   const {
@@ -14,7 +19,9 @@ export function useSkillLevelDialog() {
     onPointerLeave,
     onToggle,
     onClose,
-  } = useDisclosure<HTMLDivElement>();
+  } = useDisclosure<HTMLDivElement>({
+    closeOnOutsideClick: supportsHoverInput(),
+  });
   const levelBarRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   const [openLeft, setOpenLeft] = useState(false);

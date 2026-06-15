@@ -11,8 +11,13 @@ interface UseDisclosureReturn<T extends HTMLElement> {
   onClose: () => void;
 }
 
+interface UseDisclosureOptions {
+  /** 고정(pin)된 상태에서 컨테이너 바깥을 클릭/탭했을 때 자동으로 닫을지 여부. 기본값 true. */
+  closeOnOutsideClick?: boolean;
+}
+
 /** 현재 입력 장치가 hover를 지원하는지(마우스 등 포인팅 디바이스가 주 입력인지) 여부. */
-function supportsHoverInput(): boolean {
+export function supportsHoverInput(): boolean {
   return window.matchMedia("(hover: hover)").matches;
 }
 
@@ -30,13 +35,16 @@ function supportsHoverInput(): boolean {
  *
  * @template T containerRef를 연결할 루트 엘리먼트의 타입 (예: HTMLDivElement)
  */
-export function useDisclosure<T extends HTMLElement = HTMLElement>(): UseDisclosureReturn<T> {
+export function useDisclosure<T extends HTMLElement = HTMLElement>(
+  options: UseDisclosureOptions = {},
+): UseDisclosureReturn<T> {
+  const { closeOnOutsideClick = true } = options;
   const [isHovered, setIsHovered] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
   const containerRef = useRef<T>(null);
 
   useEffect(() => {
-    if (!isPinned) return;
+    if (!isPinned || !closeOnOutsideClick) return;
 
     function handleOutsideClick(event: PointerEvent) {
       if (!containerRef.current?.contains(event.target as Node)) {
@@ -47,7 +55,7 @@ export function useDisclosure<T extends HTMLElement = HTMLElement>(): UseDisclos
 
     document.addEventListener("pointerdown", handleOutsideClick);
     return () => document.removeEventListener("pointerdown", handleOutsideClick);
-  }, [isPinned]);
+  }, [isPinned, closeOnOutsideClick]);
 
   function onToggle() {
     if (isPinned) {

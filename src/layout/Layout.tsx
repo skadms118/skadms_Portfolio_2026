@@ -17,7 +17,7 @@ function Layout() {
     <div className="flex min-h-screen flex-col bg-[#f7f7f7]">
       <Navbar />
       <Sidebar sections={sections} />
-      <main className="flex-1 pt-25">
+      <main className="flex-1 pt-10">
         <div className="mx-auto max-w-360">
           <Outlet />
         </div>

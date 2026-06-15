@@ -1,9 +1,10 @@
 import { useRef } from "react";
+import { useThrottle } from "../hooks/useThrottle";
 import { FONT_STYLES } from "../styles/theme";
 import LevelBar from "./LevelBar";
 import SkillLevelDialogDesktop from "./SkillLevelDialogDesktop";
 import SkillLevelDialogMobile from "./SkillLevelDialogMobile";
-import { useSkillLevelDialog } from "./useSkillLevelDialog";
+import { useSkillLevelDialog } from "../hooks/useSkillLevelDialog";
 
 export interface SkillItem {
   name: string;
@@ -36,6 +37,12 @@ function SkillCard({ name, icon, level }: SkillItem) {
     onClose,
   } = useSkillLevelDialog();
   const lastPointerTypeRef = useRef("mouse");
+  const throttledToggle = useThrottle(onToggle);
+
+  function handleMobileDialogClose() {
+    if (lastPointerTypeRef.current === "mouse") return;
+    onClose();
+  }
 
   return (
     <div
@@ -47,7 +54,7 @@ function SkillCard({ name, icon, level }: SkillItem) {
       }}
       onClick={() => {
         if (lastPointerTypeRef.current === "mouse") return;
-        onToggle();
+        throttledToggle();
       }}
       className="relative flex size-62 flex-col items-center justify-center gap-3 rounded-[45px] bg-[#f7f7f7] shadow-[4px_4px_4px_0px_rgba(160,160,160,0.25)] transition-transform duration-200 hover:scale-105"
     >
@@ -66,7 +73,7 @@ function SkillCard({ name, icon, level }: SkillItem) {
         <div ref={levelBarRef} className="relative">
           <button
             type="button"
-            onClick={onToggle}
+            onClick={throttledToggle}
             aria-expanded={isOpen}
             aria-label={`${name} 레벨 설명 보기`}
           >
@@ -85,7 +92,11 @@ function SkillCard({ name, icon, level }: SkillItem) {
       </div>
 
       {isOpen && (
-        <SkillLevelDialogMobile name={name} level={level} onClose={onClose} />
+        <SkillLevelDialogMobile
+          name={name}
+          level={level}
+          onClose={handleMobileDialogClose}
+        />
       )}
     </div>
   );

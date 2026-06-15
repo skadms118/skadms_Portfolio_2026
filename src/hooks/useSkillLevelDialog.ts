@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { useDisclosure } from "../hooks/useDisclosure";
+import { useDisclosure } from "./useDisclosure";
 
 /**
  * SkillCard의 레벨 설명 다이얼로그 disclosure 상태와, xs 이상(PC)에서 다이얼로그가
@@ -7,8 +7,14 @@ import { useDisclosure } from "../hooks/useDisclosure";
  * Language/FrameworkLibrary/Tool 섹션의 SkillCard가 공통으로 사용한다.
  */
 export function useSkillLevelDialog() {
-  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle, onClose } =
-    useDisclosure<HTMLDivElement>();
+  const {
+    isOpen,
+    containerRef,
+    onPointerEnter,
+    onPointerLeave,
+    onToggle,
+    onClose,
+  } = useDisclosure<HTMLDivElement>();
   const levelBarRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   const [openLeft, setOpenLeft] = useState(false);

@@ -1,3 +1,5 @@
+import { useThrottle } from "../../hooks/useThrottle";
+
 const HAMBURGER_BAR_HEIGHTS = ["h-1.5", "h-1.5", "h-1.5"];
 
 interface HamburgerButtonProps {
@@ -10,10 +12,12 @@ interface HamburgerButtonProps {
  * 열림 상태에 따라 막대 색상이 바뀐다. 드롭다운 메뉴 자체는 MobileNavMenu가 렌더링한다.
  */
 function HamburgerButton({ isOpen, onToggle }: HamburgerButtonProps) {
+  const throttledToggle = useThrottle(onToggle);
+
   return (
     <button
       type="button"
-      onClick={onToggle}
+      onClick={throttledToggle}
       aria-expanded={isOpen}
       aria-label="메뉴 열기"
       className="flex flex-col gap-2.5 md:hidden"

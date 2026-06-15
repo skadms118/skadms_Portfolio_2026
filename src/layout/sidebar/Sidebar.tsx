@@ -1,4 +1,5 @@
 import { useDisclosure } from "../../hooks/useDisclosure";
+import { useThrottle } from "../../hooks/useThrottle";
 
 export interface SidebarSection {
   id: string;
@@ -18,6 +19,7 @@ const TRIGGER_BAR_COUNT = 10;
 function Sidebar({ sections }: SidebarProps) {
   const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
     useDisclosure<HTMLDivElement>();
+  const throttledToggle = useThrottle(onToggle);
 
   return (
     <div
@@ -45,7 +47,7 @@ function Sidebar({ sections }: SidebarProps) {
 
       <button
         type="button"
-        onClick={onToggle}
+        onClick={throttledToggle}
         aria-expanded={isOpen}
         aria-label="사이드바 메뉴"
         className="flex w-7.5 flex-col gap-4"

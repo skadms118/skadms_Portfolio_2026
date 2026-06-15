@@ -1,4 +1,5 @@
 import { useDisclosure } from "../../hooks/useDisclosure";
+import { useThrottle } from "../../hooks/useThrottle";
 import LevelDialogPanel from "../../skill/LevelDialogPanel";
 import LevelInfo, { LEVELS } from "../../skill/LevelInfo";
 
@@ -11,6 +12,7 @@ import LevelInfo, { LEVELS } from "../../skill/LevelInfo";
 function LevelGuide() {
   const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
     useDisclosure<HTMLDivElement>();
+  const throttledToggle = useThrottle(onToggle);
 
   return (
     <div
@@ -32,7 +34,7 @@ function LevelGuide() {
 
       <button
         type="button"
-        onClick={onToggle}
+        onClick={throttledToggle}
         aria-expanded={isOpen}
         aria-label="Level Guide 보기"
         className={`flex h-7.5 w-17.5 items-center justify-center text-[14px] font-bold ${

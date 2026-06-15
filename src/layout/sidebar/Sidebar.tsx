@@ -35,7 +35,7 @@ function Sidebar({ sections }: SidebarProps) {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="flex h-10.5 items-center text-[20px] font-medium text-[#646464]"
+              className="flex h-10.5 origin-left items-center text-[20px] font-medium text-[#646464] transition-transform duration-200 hover:scale-110"
             >
               {section.label}
             </a>

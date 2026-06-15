@@ -17,7 +17,7 @@ export const SIDEBAR_SECTIONS: Record<string, SidebarSection[]> = {
   "/project": [{ id: "project", label: "Project" }],
   "/skill": [
     { id: "language", label: "Language" },
-    { id: "framework-library", label: "Framework / Library" },
+    { id: "framework-library", label: "Framework & Library" },
     { id: "tool", label: "Tool" },
   ],
 };

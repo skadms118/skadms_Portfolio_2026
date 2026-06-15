@@ -7,7 +7,7 @@ import { useDisclosure } from "../hooks/useDisclosure";
  * Language/FrameworkLibrary/Tool 섹션의 SkillCard가 공통으로 사용한다.
  */
 export function useSkillLevelDialog() {
-  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle } =
+  const { isOpen, containerRef, onPointerEnter, onPointerLeave, onToggle, onClose } =
     useDisclosure<HTMLDivElement>();
   const levelBarRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
@@ -39,5 +39,6 @@ export function useSkillLevelDialog() {
     onPointerEnter,
     onPointerLeave,
     onToggle,
+    onClose,
   };
 }

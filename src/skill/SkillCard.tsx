@@ -31,6 +31,7 @@ function SkillCard({ name, icon, level }: SkillItem) {
     onPointerEnter,
     onPointerLeave,
     onToggle,
+    onClose,
   } = useSkillLevelDialog();
 
   return (
@@ -73,7 +74,9 @@ function SkillCard({ name, icon, level }: SkillItem) {
         </div>
       </div>
 
-      {isOpen && <SkillLevelDialogMobile name={name} level={level} />}
+      {isOpen && (
+        <SkillLevelDialogMobile name={name} level={level} onClose={onClose} />
+      )}
     </div>
   );
 }

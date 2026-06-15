@@ -12,7 +12,11 @@ interface SkillLevelDialogMobileProps {
  * 레벨 설명 다이얼로그. Figma의 "level dialog sample"을 기준으로 한다.
  * 다이얼로그 영역을 탭하면 닫힌다.
  */
-function SkillLevelDialogMobile({ name, level, onClose }: SkillLevelDialogMobileProps) {
+function SkillLevelDialogMobile({
+  name,
+  level,
+  onClose,
+}: SkillLevelDialogMobileProps) {
   const { label, description } = LEVELS[level - 1];
 
   return (
@@ -20,7 +24,7 @@ function SkillLevelDialogMobile({ name, level, onClose }: SkillLevelDialogMobile
       role="dialog"
       aria-label={`${name} 레벨 설명`}
       onClick={onClose}
-      className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2.5 rounded-[45px] bg-[rgba(221,221,221,0.5)] px-3 xs:hidden"
+      className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2.5 rounded-[45px] bg-[rgba(240,240,240,0.8)] px-3 xs:hidden"
     >
       <p className="text-[20px] font-bold text-[#444]">{label}</p>
       <LevelBar level={level} />

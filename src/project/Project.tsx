@@ -1,4 +1,3 @@
-import React from "react";
 import { FONT_STYLES } from "../styles/theme";
 
 const Project = () => {

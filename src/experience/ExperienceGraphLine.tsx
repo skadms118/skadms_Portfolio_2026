@@ -7,7 +7,7 @@ function ExperienceGraphLine() {
   return (
     <div
       aria-hidden="true"
-      className="absolute left-[14px] w-1 -translate-x-1/2 -inset-y-[72px] bg-[linear-gradient(to_bottom,transparent_0%,rgba(194,194,194,0.4)_8%,rgba(194,194,194,0.64)_50%,rgba(194,194,194,0.4)_92%,transparent_100%)]"
+      className="absolute left-3.5 w-1 -translate-x-1/2 -inset-y-18 bg-[linear-gradient(to_bottom,transparent_0%,rgba(194,194,194,0.4)_8%,rgba(194,194,194,0.64)_50%,rgba(194,194,194,0.4)_92%,transparent_100%)]"
     />
   );
 }

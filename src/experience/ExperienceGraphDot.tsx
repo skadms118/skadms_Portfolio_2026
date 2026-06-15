@@ -6,7 +6,7 @@ function ExperienceGraphDot() {
   return (
     <div
       aria-hidden="true"
-      className="size-7 shrink-0 rounded-full border-[4px] border-[#c2c2c2] bg-[#f7f7f7] shadow-[0px_0px_15px_0px_rgba(160,160,160,0.8)]"
+      className="size-7 shrink-0 rounded-full border-4 border-[#c2c2c2] bg-[#f7f7f7] shadow-[0px_0px_15px_0px_rgba(160,160,160,0.8)]"
     />
   );
 }

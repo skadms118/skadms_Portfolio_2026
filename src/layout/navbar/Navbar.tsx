@@ -77,7 +77,7 @@ function Navbar() {
       </nav>
 
       <div className="md:hidden">
-        {isOpen && <MobileNavMenu items={NAV_ITEMS} onClose={onClose} />}
+        <MobileNavMenu items={NAV_ITEMS} onClose={onClose} isOpen={isOpen} />
       </div>
     </header>
   );

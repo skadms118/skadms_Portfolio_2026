@@ -14,12 +14,12 @@ function Strength() {
     <PageSection
       id="strength"
       title="Strength"
-      contentClassName="grid grid-cols-1 justify-items-center gap-6 xs:grid-cols-2 3xl:grid-cols-3 3xl:gap-22.5"
+      contentClassName="grid grid-cols-1 justify-items-center gap-22.5 xs:grid-cols-2 3xl:grid-cols-3"
       divider={false}
     >
       {STRENGTHS.map((item, index) => (
         <Reveal key={item.title} delay={REVEAL_STEP * (index + 1)}>
-          <div className="flex h-60 w-75 flex-col items-center justify-center gap-2.5 rounded-[45px] border-10 border-[#c2c2c2] px-5 text-center shadow-[0px_4px_4px_0px_rgba(221,221,221,0.25)] xs:h-75">
+          <div className="flex size-75 flex-col items-center justify-center gap-2.5 rounded-[45px] border-10 border-[#c2c2c2] px-5 text-center shadow-[0px_4px_4px_0px_rgba(221,221,221,0.25)]">
             <h3 className={FONT_STYLES.highlight}>{item.title}</h3>
             <div className={FONT_STYLES.content2}>
               {item.description.map((line) => (
@@ -34,3 +34,5 @@ function Strength() {
 }
 
 export default Strength;
+
+//이전 박스:  className="flex h-60 w-75 flex-col items-center justify-center gap-2.5 rounded-[45px] border-10 border-[#c2c2c2] px-5 text-center shadow-[0px_4px_4px_0px_rgba(221,221,221,0.25)] xs:h-75"

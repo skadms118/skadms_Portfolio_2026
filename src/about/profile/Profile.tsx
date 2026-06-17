@@ -2,7 +2,7 @@ import { FONT_STYLES } from "../../styles/theme";
 import PageSection from "../../components/PageSection";
 import Reveal, { REVEAL_STEP } from "../../components/Reveal";
 import profileImg from "../../assets/profile_jpg.jpg";
-import { CONTACT_LINKS } from "../../data/contect";
+import { CONTACT_LINKS } from "../../data/contact";
 
 /**
  * /about - Profile 섹션.
@@ -66,12 +66,20 @@ function Profile() {
           delay={REVEAL_STEP * 4}
           className="flex w-full flex-col gap-1.25"
         >
-          <h3 className={FONT_STYLES.label}>Contect</h3>
+          <h3 className={FONT_STYLES.label}>Contact</h3>
           <div className={FONT_STYLES.content2}>
             <p>Phone: 010-9494-2537</p>
             {CONTACT_LINKS.map(({ label, value, href }) => (
               <p key={label}>
-                {label}: <a href={href}>{value}</a>
+                {label}:{" "}
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200 hover:text-[#6B9EC8]"
+                >
+                  {value}
+                </a>
               </p>
             ))}
           </div>

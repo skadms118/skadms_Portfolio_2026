@@ -7,6 +7,27 @@ export interface ExperienceItem {
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
+    period: "2025.3 ~ 2025.9",
+    title: "도시계획학과 졸업 프로젝트",
+    description: "가천대학교 동문회장상, 한국도시계획기술사 대상 수상",
+  },
+  {
+    period: "2025.8",
+    title: "2025 SW중심대학 성적 및 활동 우수장학금 선정",
+    description: "2024 1학기부터 소프트웨어학과 복수전공",
+  },
+  {
+    period: "2026.3 ~",
+    title: "UMC 10th Web 파트",
+    description: "프론트앤드 학습을 위해 UMC 10th Web 파트 챌린저로서 참여",
+  },
+  {
+    period: "2026.6",
+    title: "UMC 장기해커톤",
+    description: "Web 파트 팀장으로서 프로젝트 참여",
+  },
+  /*
+  {
     period: "2026.3 ~",
     title: "UMC 10th Web 파트",
     description: "프론트앤드 학습을 위해 UMC 10th Web 파트 챌린저로서 참여",
@@ -31,4 +52,5 @@ export const EXPERIENCES: ExperienceItem[] = [
     title: "UMC 11th(예정)",
     description: "UMC 11th 챌린저 참여 예정",
   },
+  */
 ];

@@ -1,7 +1,8 @@
 import { useDisclosure } from "../../hooks/useDisclosure";
 import { useThrottle } from "../../hooks/useThrottle";
 import LevelDialogPanel from "../../skill/LevelDialogPanel";
-import LevelInfo, { LEVELS } from "../../skill/LevelInfo";
+import LevelInfo from "../../skill/LevelInfo";
+import { LEVELS } from "../../items/LevelItem";
 
 /**
  * hover 시 표시, 클릭 시 고정, 배경 클릭 또는 재클릭 시 해제되는 Level Guide 버튼.

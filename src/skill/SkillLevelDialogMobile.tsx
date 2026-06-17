@@ -1,5 +1,5 @@
 import LevelBar from "./LevelBar";
-import { LEVELS } from "./LevelInfo";
+import { LEVELS } from "../items/LevelItem";
 
 interface SkillLevelDialogMobileProps {
   name: string;

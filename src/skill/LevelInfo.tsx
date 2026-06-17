@@ -1,22 +1,5 @@
 import LevelBar from "./LevelBar";
-
-export const LEVELS = [
-  {
-    level: 1,
-    label: "LEVEL 1",
-    description: "제대로 학습 경험이 없어 실전에서 사용하기는 어려움",
-  },
-  {
-    level: 2,
-    label: "LEVEL 2",
-    description: "기본적인 내용을 학습했으나 실전 경험이 많지 않음",
-  },
-  {
-    level: 3,
-    label: "LEVEL 3",
-    description: "프로젝트 및 작업에서 수월하게 사용 가능",
-  },
-] as const;
+import { LEVELS } from "../items/LevelItem";
 
 interface LevelInfoProps {
   level: 1 | 2 | 3;

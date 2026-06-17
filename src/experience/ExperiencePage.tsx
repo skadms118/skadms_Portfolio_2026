@@ -1,5 +1,4 @@
 import Experience from "./experience/Experience";
-import Award from "./award/Award";
 import Qualification from "./qualification/Qualification";
 
 /**
@@ -9,7 +8,6 @@ function ExperiencePage() {
   return (
     <div>
       <Experience />
-      <Award />
       <Qualification />
     </div>
   );

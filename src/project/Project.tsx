@@ -1,16 +1,27 @@
-import { FONT_STYLES } from "../styles/theme";
+import PageSection from "../components/PageSection";
+import Reveal, { REVEAL_STEP } from "../components/Reveal";
+import ProjectCard from "./ProjectCard";
+import { PROJECTS } from "../items/ProjectItem";
 
-const Project = () => {
+/**
+ * /project - 진행한 프로젝트를 카드 형태로 나열한다.
+ * 카드를 클릭하면 새 탭에서 해당 프로젝트 url로 이동한다.
+ */
+function Project() {
   return (
-    <div className="flex justify-center pt-50">
-      <h1 className={`${FONT_STYLES.label} text-center max-w-200`}>
-        이 페이지를 채워나갈 첫번째 프로젝트를 찾고있습니다.
-        <br />
-        아직 프로젝트 경험은 없지만 이번 Demo Day를 통해 <br />
-        열심히 배워나가며 뜻깊은 경험을 해보고 싶습니다.
-      </h1>
-    </div>
+    <PageSection
+      id="project"
+      title="Project"
+      contentClassName="grid grid-cols-1 justify-items-center gap-10 xs:grid-cols-2 3xl:grid-cols-3"
+      divider={false}
+    >
+      {PROJECTS.map((item, index) => (
+        <Reveal key={item.name} delay={REVEAL_STEP * (index + 1)}>
+          <ProjectCard item={item} />
+        </Reveal>
+      ))}
+    </PageSection>
   );
-};
+}
 
 export default Project;
